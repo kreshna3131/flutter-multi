@@ -103,6 +103,7 @@ class _Halaman3State extends State<Halaman3> {
         padding: const EdgeInsets.all(15),
         width: double.infinity,
         height: 800,
+        color: Colors.yellow[50],
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -155,7 +156,8 @@ class _Halaman3State extends State<Halaman3> {
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        backgroundColor: Colors.white, // Background color putih
+                        backgroundColor:
+                            Colors.yellow[50], // Background color putih
                         title: Text(
                           "Form Kosong",
                           style: TextStyle(
@@ -228,10 +230,12 @@ class _Halaman3State extends State<Halaman3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "Deskripsi Foto",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        title: Center(
+          child: const Text(
+            "Deskripsi Foto",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -248,11 +252,14 @@ class _Halaman3State extends State<Halaman3> {
             title: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.file(
-                  File(catatan[index]['gambar']),
-                  width: double.infinity,
-                  height: 150,
-                  fit: BoxFit.contain,
+                Padding(
+                  padding: const EdgeInsets.only(top: 12.0),
+                  child: Image.file(
+                    File(catatan[index]['gambar']),
+                    width: double.infinity,
+                    height: 180,
+                    fit: BoxFit.contain,
+                  ),
                 ),
                 const SizedBox(height: 8),
                 Row(

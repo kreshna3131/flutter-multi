@@ -84,6 +84,7 @@ class _Halaman1State extends State<Halaman1> {
         padding: const EdgeInsets.all(15),
         width: double.infinity,
         height: 800,
+        color: Colors.yellow[50],
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -178,10 +179,12 @@ class _Halaman1State extends State<Halaman1> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          "List Catatan",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        title: Center(
+          child: const Text(
+            "List Catatan",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),

@@ -105,6 +105,7 @@ class _Halaman2State extends State<Halaman2> {
         padding: const EdgeInsets.all(15),
         width: double.infinity,
         height: 800,
+        color: Colors.yellow[50],
         child: SingleChildScrollView(
           child: Column(
             children: [
@@ -157,7 +158,8 @@ class _Halaman2State extends State<Halaman2> {
                     showDialog(
                       context: context,
                       builder: (context) => AlertDialog(
-                        backgroundColor: Colors.white, // Background color putih
+                        backgroundColor:
+                            Colors.yellow[50], // Background color putih
                         title: Text(
                           "Form Kosong",
                           style: TextStyle(
@@ -230,10 +232,12 @@ class _Halaman2State extends State<Halaman2> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          "List Foto",
-          style: TextStyle(
-            fontWeight: FontWeight.bold,
+        title: Center(
+          child: const Text(
+            "List Foto",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ),
@@ -251,11 +255,9 @@ class _Halaman2State extends State<Halaman2> {
             title: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.file(
-                  File(catatan[index]['gambar']),
-                  width: 60,
-                  height: 60,
-                  fit: BoxFit.contain,
+                CircleAvatar(
+                  radius: 30,
+                  backgroundImage: FileImage(File(catatan[index]['gambar'])),
                 ),
                 const SizedBox(width: 10),
                 Expanded(
